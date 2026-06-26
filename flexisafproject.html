@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Bright Future Academy</title>
+    
+     <link rel="stylesheet"href="mystylesheet.css">
+</head>
+
+<body>
+    <script>
+        let admissionVisible = false;
+let applicationCount = 0;
+
+window.onload = function(){
+
+    let today = new Date();
+
+    document.getElementById("todayDate").innerHTML =
+    "Today's Date: " + today.toDateString();
+
+    document.getElementById("footerText").innerHTML =
+    "&copy; 2026 Bright Future Academy | Powered by DOM Manipulation";
+
+}
+
+function showAdmissionInfo(){
+
+    let info = document.getElementById("admissionInfo");
+    let button = document.getElementById("admissionButton");
+
+    if(admissionVisible){
+
+        info.innerHTML = "";
+
+        button.innerHTML = "View Admission Details";
+
+        admissionVisible = false;
+
+    }
+
+    else{
+
+        info.innerHTML = `
+        <h3>Admission Information</h3>
+        <p><strong>Academic Session:</strong> 2026/2027</p>
+        <p><strong>Application Fee:</strong> ₦5,000</p>
+        <p><strong>Closing Date:</strong> 31st August 2026</p>
+        <p><strong>Entrance Examination:</strong> 10th September 2026</p>
+        `;
+
+        button.innerHTML = "Hide Admission Details";
+
+        admissionVisible = true;
+
+    }
+
+}
+function changeSchoolMotto(){
+
+    document.getElementById("motto").innerHTML =
+    "<b>Education</b> builds a brighter future.";
+
+}
+
+function changeBackground(){
+
+    document.body.style.backgroundColor="#dff6ff";
+
+}
+
+function resetBackground(){
+
+    document.body.style.backgroundColor="#eef5fb";
+
+}
+
+function highlightFees(){
+
+    document.getElementById("fees").style.backgroundColor="#fff8dc";
+
+}
+
+function resetFees(){
+
+    document.getElementById("fees").style.backgroundColor="white";
+
+}
+</script>
+
+    
+    <header>
+
+        <h1>Bright Future Academy</h1>
+
+        <p class="school-tagline">
+    Quality Education for a Better Tomorrow
+</p>
+        <p id="todayDate"></p>
+    </header>
+    
+
+    <hr>
+
+    
+    <nav>
+
+        <a href="#about">About Us</a> 
+        <a href="#courses">Courses</a> 
+        <a href="#fees">School Fees</a> 
+        <a href="#contact">Contact</a>
+        <a href="#Admission">Admission</a>
+
+    </nav>
+
+    <hr>
+
+    
+    <main>
+
+        
+        <section id="about">
+
+            <h2>About Us</h2>
+
+            <p>
+                Bright Future Academy is a school located in Nigeria.
+                We provide quality education and help students become successful in life.
+            </p>
+
+            <p>
+                Our teachers are experienced and dedicated to academic excellence.
+            </p>
+
+        </section>
+
+        <hr>
+
+        
+        <section id="courses">
+
+            <h2>Courses Offered</h2>
+
+            
+            <ul>
+                <li>Mathematics</li>
+                <li>English Language</li>
+                <li>Biology</li>
+                <li>Chemistry</li>
+                <li>Physics</li>
+                <li>Computer Studies</li>
+            </ul>
+
+            <h3>Why Choose Our School?</h3>
+
+            
+            <ol>
+                <li>Qualified Teachers</li>
+                <li>Good Learning Environment</li>
+                <li>Affordable School Fees</li>
+                <li>Modern Computer Laboratory</li>
+            </ol>
+
+        </section>
+
+        <hr>
+        
+        <section id="Admission">
+
+            <h2>Admission</h2>
+
+             <form onsubmit="submitApplication(event)">
+
+                <label>Student Full Name:</label><br>
+                <input type="text" name="fullname" required><br><br>
+
+                 <label>Date of Birth:</label><br>
+        <input type="date" name="dob" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female
+        <br><br>
+
+        <label>Class Applying For:</label><br>
+        <select name="class" required>
+            <option>JSS1</option>
+            <option>JSS2</option>
+            <option>JSS3</option>
+            <option>SS1</option>
+            <option>SS2</option>
+            <option>SS3</option>
+        </select>
+        <br><br>
+
+        <label>Parent/Guardian Name:</label><br>
+        <input type="text" name="guardian" required><br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="tel" name="phone" required><br><br>
+
+        <label>Email Address:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Home Address:</label><br>
+        <textarea name="address" rows="4" cols="30" required></textarea>
+<br><br>
+
+<button type="button" id="admissionButton" onclick="showAdmissionInfo()">
+    View Admission Details
+</button>
+
+<p id="admissionInfo"></p>
+
+<p id="applicationMessage"></p>
+
+<br>
+
+<input type="submit" value="Submit Application">
+
+<p id="admissionInfo"></p>
+
+<p id="applicationMessage"></p>
+
+
+            </form>
+
+        </section>
+
+            <hr>
+
+        
+        <section id="fees">
+
+            <h2>School Fees</h2>
+            <button type="button" onclick="highlightFees()">
+    Highlight Fees
+</button>
+
+<button type="button" onclick="resetFees()">
+    Reset Fees
+</button>
+
+<br><br>
+
+            <table border="1">
+
+                <tr>
+                    <th>Class</th>
+                    <th>First Term</th>
+                    <th>Second Term</th>
+                    <th>Third Term</th>
+                </tr>
+
+                <tr>
+                    <td>JSS1</td>
+                    <td>₦45,000</td>
+                    <td>₦45,000</td>
+                    <td>₦45,000</td>
+                </tr>
+
+                <tr>
+                    <td>JSS2</td>
+                    <td>₦50,000</td>
+                    <td>₦50,000</td>
+                    <td>₦50,000</td>
+                </tr>
+
+                <tr>
+                    <td>SS1</td>
+                    <td>₦60,000</td>
+                    <td>₦60,000</td>
+                    <td>₦60,000</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        
+        <section>
+
+            <h2>School Motto</h2>
+
+            <p id="motto">
+    <b>Knowledge</b> is the key to <i>success</i>.
+</p>
+
+        </section>
+
+        <hr>
+
+        
+        <section>
+
+            <h2>Announcement</h2>
+
+            <p>
+                Admission is now open for the 2026/2027 academic session &amp; registration is ongoing.
+            </p>
+
+        </section>
+
+        <section id="contact">
+            
+        <hr>
+
+
+
+            <h2>Contact</h2>
+        
+
+
+        
+       <div class="contact-container">
+
+    <div class="contact-box">
+        <h3>Address</h3>
+        <p>No. 10 Unity Road, Abuja, Nigeria</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Phone</h3>
+        <p>08012345678</p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Email</h3>
+        <p>brightfutureacademy@gmail.com</p>
+    </div>
+
+</div>
+    </section>
+    </main>
+
+
+   <footer>
+
+    <p id="footerText">
+
+    &copy; 2026 Bright Future Academy
+
+</p>
+
+</footer>
+
+<script>
+
+function submitApplication(event) {
+
+    event.preventDefault();
+
+    let fullname =
+        document.querySelector('input[name="fullname"]').value;
+
+    document.querySelector("header p").innerHTML =
+        "Welcome " + fullname + " to Bright Future Academy!";
+
+    let selectedClass =
+        document.querySelector('select[name="class"]').value;
+
+    let email =
+        document.querySelector('input[name="email"]').value;
+
+    if (fullname === "" || email === "") {
+
+        alert("Please fill in all required fields.");
+
+        return;
+    }
+
+    document.getElementById("applicationMessage").innerHTML =
+        "<strong>Application Submitted Successfully!</strong><br>" +
+        "Applicant Name: " + fullname + "<br>" +
+        "Class Applied For: " + selectedClass + "<br>" +
+        "Email Address: " + email;
+
+    applicationCount++;
+
+    document.getElementById("applicationMessage").innerHTML +=
+        "<br>Total Applications Submitted: " + applicationCount;
+
+}
+
+</script>
+
+</body>
+</html>
